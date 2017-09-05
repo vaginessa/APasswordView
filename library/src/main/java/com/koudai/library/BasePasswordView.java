@@ -96,11 +96,12 @@ public class BasePasswordView extends LinearLayout implements PasswordView{
     }
 
     private void initViews(Context context){
+        // 设置方向为水平
         setOrientation(HORIZONTAL);
 
         mTransformationMethod = new BasePasswordTransformationMethod(mPasswordTransformation);
 
-
+        // 布局basepasswordview中只有一个EditText，添加到当前视图
         mInputView = new ImeDelBugFixedEditText(context);
         // 隐藏光标
         mInputView.setCursorVisible(false);
@@ -132,6 +133,7 @@ public class BasePasswordView extends LinearLayout implements PasswordView{
 
         int index = 1;
         while(index < mPasswordLength){
+            // 添加文本
             TextView textView = new TextView(context);
             setCustomAttr(textView);
             textView.setBackground(null);
@@ -159,6 +161,7 @@ public class BasePasswordView extends LinearLayout implements PasswordView{
         @Override
         public void onDeleteClick() {
             for (int i = mPasswordArr.length - 1; i >= 0; i--) {
+                // 找到已输入的最后一个字符，将其置为null
                 if (mPasswordArr[i] != null) {
                     mPasswordArr[i] = null;
                     mViewArr[i].setText(null);
@@ -205,19 +208,23 @@ public class BasePasswordView extends LinearLayout implements PasswordView{
             }
 
             String newStr = s.toString();
-            if (newStr.length() == 1) {
+            if (newStr.length() == 1) { // 初次输入字符，赋值给索引0
                 mPasswordArr[0] = newStr;
                 notifyTextChanged();
-            } else if (newStr.length() == 2) {
-                String newNum = newStr.substring(1);
+            }
+            // 非首次输入字符
+            else if (newStr.length() == 2) {
+                String newNum = newStr.substring(1); // 截取第2个字符
                 for (int i = 0; i < mPasswordArr.length; i++) {
                     if (mPasswordArr[i] == null) {
-                        mPasswordArr[i] = newNum;
-                        mViewArr[i].setText(newNum);
-                        notifyTextChanged();
+                        mPasswordArr[i] = newNum; // 赋值给数组mPasswordArr，mPasswordArr中存储的就是最终的密码
+                        mViewArr[i].setText(newNum); // 给TextView设值
+                        notifyTextChanged(); // 通知密码发生改变
                         break;
                     }
                 }
+                // 上述逻辑执行完毕后，把索引0的字符设置给mInputView
+                // 这样，之后再输入内容时，newStr.length()始终等于2。mInputView的内容长度始终等于1
                 mInputView.removeTextChangedListener(this);
                 mInputView.setText(mPasswordArr[0]);
                 if (mInputView.getText().length() >= 1) {

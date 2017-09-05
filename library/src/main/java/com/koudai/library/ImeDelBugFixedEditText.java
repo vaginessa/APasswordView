@@ -39,6 +39,7 @@ public class ImeDelBugFixedEditText extends EditText{
             super(target, mutable);
         }
 
+        // 将KeyEvent.KEYCODE_DEL事件回调出去
         @Override
         public boolean sendKeyEvent(KeyEvent event) {
             if (event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_DEL) {
@@ -51,6 +52,10 @@ public class ImeDelBugFixedEditText extends EditText{
         }
 
 
+        /**
+         * deleteSurroundingText()：删除字符，区间：当前光标前beforeLength个长度，当前光标后afterLength个长度
+         * beforeLength == 1 && afterLength == 0表示向前删除一个字符，可视为KeyEvent.KEYCODE_DEL
+         * */
         @Override
         public boolean deleteSurroundingText(int beforeLength, int afterLength) {
             if (beforeLength == 1 && afterLength == 0) {
