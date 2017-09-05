@@ -77,4 +77,4 @@ APasswordView是一个密码输入视图，类似于微信或支付宝的支付�
  </declare-styleable>
  ```           
 
-感谢开源项目<https://github.com/Jungerr/GridPasswordView> 本项目核心代码来源此，再次感谢作者。
+感谢[项目GridPasswordView](https://github.com/Jungerr/GridPasswordView)，本项目核心代码来源此.
