@@ -5,6 +5,8 @@ APasswordView是一个密码输入视图，类似于微信或支付宝的支付�
 * 实现原理
 > 整个密码输入框最外层是一个水平方向的LinearLayout，内部包括显示密码的View，而多个显示密码的View中，第一个位置放置的是EditText，其余均为TextView
 
+* Download [app-debug.apk](http://ovsv7o62g.bkt.clouddn.com/app-debug.apk) 
+
 效果图：
 1. AlonePasswordView
 
