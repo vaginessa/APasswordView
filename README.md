@@ -1,6 +1,9 @@
-# APasswordView
+### APasswordView
 APasswordView是一个密码输入视图，类似于微信或支付宝的支付密码视图。
-可以设置文字颜色和大小、分割线颜色、密码的长度。
+可以设置文字颜色和大小、分割线颜色、密码的长度、以及背景圆角等。
+
+* 实现原理
+> 整个密码输入框最外层是一个水平方向的LinearLayout，内部包括显示密码的View，而多个显示密码的View中，第一个位置放置的是EditText，其余均为TextView
 
 效果图：
 1. AlonePasswordView
@@ -44,7 +47,7 @@ APasswordView是一个密码输入视图，类似于微信或支付宝的支付�
         app:gpvTextColor="#000000"
         app:gpvTextSize="25sp" />
 ```
-#### 参数说明
+### 参数说明
 ```
 <declare-styleable name="basePasswordView">
 
