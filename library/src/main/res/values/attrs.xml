@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="basePasswordView">
+
+        <attr name="gpvTextColor" format="color|reference" /> <!-- 设置输入密码的颜色 -->
+        <attr name="gpvTextSize" format="dimension" /> <!-- 设置输入密码的大小 -->
+
+        <attr name="gpvLineColor" format="color" /> <!-- 边框颜色 -->
+        <attr name="gpvGridColor" format="color" /> <!-- 背景顔色 -->
+        <attr name="gpvLineWidth" format="dimension" /> <!-- 边框宽度 -->
+
+        <attr name="gpvPasswordLength" format="integer" /> <!-- 设置密码长度 -->
+        <attr name="gpvPasswordTransformation" format="string" /> <!-- 你输入密码的时候显示的符号 -->
+
+        <attr name="gpvPasswordType" format="enum"> <!-- 输入内容的类别 -->
+            <enum name="numberPassword" value="0" />
+            <enum name="textPassword" value="1" />
+            <enum name="textVisiblePassword" value="2" />
+            <enum name="textWebPassword" value="3" />
+        </attr>
+
+        <attr name="BaseItemBackground" format="reference" /> <!-- 设置输入密码框的背景 -->
+        <attr name="BaseItemMargin" format="dimension" /> <!-- 边框间距 -->
+        <attr name="BaseCornerRadius" format="dimension" /> <!-- 背景圆角 -->
+
+    </declare-styleable>
+
+</resources>
