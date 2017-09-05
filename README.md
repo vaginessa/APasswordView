@@ -5,10 +5,10 @@ APasswordView是一个密码输入视图，类似于微信或支付宝的支付�
 效果图：
 1. AlonePasswordView
 
-![AlonePasswordView](http://ovsv7o62g.bkt.clouddn.com/098CEA0770BA23322CE7E64455B60177.png)
+> ![AlonePasswordView](http://ovsv7o62g.bkt.clouddn.com/098CEA0770BA23322CE7E64455B60177.png)
 
 2. WholePasswordView
-![WholePasswordView](http://ovsv7o62g.bkt.clouddn.com/4FEADB1D76A9D18ADB27E44CB23F7E92.png)
+> ![WholePasswordView](http://ovsv7o62g.bkt.clouddn.com/4FEADB1D76A9D18ADB27E44CB23F7E92.png)
 
 
 感谢开源项目<https://github.com/Jungerr/GridPasswordView> 本项目核心代码来源此，再次感谢作者。
